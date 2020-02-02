@@ -4,9 +4,11 @@ const dotenv = require('dotenv');
 const authRoute = require('./routes/auth');
 const postsRoute = require('./routes/posts');
 const mongoose = require('mongoose');
+const cors = require('cors')
 
 dotenv.config();
 
+app.use(cors())
 app.use(express.json());
 
 //routes middleware

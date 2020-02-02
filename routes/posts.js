@@ -2,11 +2,14 @@ const router = require('express').Router();
 const User = require('../model/User');
 const verify = require('./verifyToken');
 
-router.get('/', verify,(req, res) => {
+router.post('/', verify, async (req, res) => {
+
+    const userData = await User.findOne(req.body._id);
+    console.log(userData);
     res.json({
-        posts: {
-            title: 'my first post',
-            description: 'protected route'
+        userData: {
+            userEmail: userData.email,
+            userName: userData.name
         }
     })
 })

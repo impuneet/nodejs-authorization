@@ -11,11 +11,13 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    
 
     steps:
+    - name: Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+      
     - name: Prints path
       run: echo "${{ steps.extract_branch.outputs.branch }}"
-    - name: deoloy api
-      with:
-        script: |
-          npm i && node index.js

@@ -1,9 +1,13 @@
 module.exports = {
-    // "extends": 'airbnb-base',
+    // extends: 'airbnb-base',
     "extends": "eslint:recommended",
     "env": {
         node:true,
         es6: true
+    },
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
     },
     "rules": {
         'indent': [2, 4],

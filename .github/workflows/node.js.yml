@@ -26,4 +26,4 @@ jobs:
       id: extract_branch
       
     - name: Prints path
-      run: print "${{ steps.extract_branch.outputs.branch }}"
+      run: echo "${{ steps.extract_branch.outputs.branch }}"
